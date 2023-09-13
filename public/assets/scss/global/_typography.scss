@@ -129,22 +129,28 @@ pre {
 a, a:hover, a:active,
 a:focus, a:visited {
     display: inline-block;
+    text-decoration: none;
+    transition: all 1s ease-in;
 }
-// a {
-
-// }
-// a:hover {
-
-// }
-// a:active {
-
-// }
-// a:focus {
-
-// }
-// a:visited {
-
-// }
+a {
+    color: $primary_color;
+    &:hover {
+       color: $hover_background_color; 
+    }
+    &:link {
+        color: $link_color;
+    }
+    &:visited {
+        color: $link_color;
+        text-decoration: dotted;
+    }
+    &:active {
+        color: $link_color;
+    }
+    &:focus {
+        color: $hover_background_color;
+    }
+}
 
 // Set up style for list.
 li ul, li, ol {

@@ -1,0 +1,59 @@
+/**
+ * Input SCSS
+ *
+ * @file scss/element/input.scss
+ * @author Tafhimul Kabir <tafhimulkabir@protonmail.com>
+ *
+ * This file contain the default style for input field.
+ *
+ * --------------------------------------------------------------*/
+
+ div {
+    &.app__input__wrapper {
+        position: relative;
+        padding: 0;
+        @include em_margin(16 0 16 0);
+        @include full_width();
+        @include rem_height(40);
+
+        input {
+            @include fill_with_position();
+            @include em_padding(8 16 8 16);
+            @include em_border_radius(4);
+            @include em_font(14);
+            width: inherit;
+            height: inherit;
+            font-family: inherit;
+            color: $secondary_text_color;
+            outline: none;
+            background: none;
+            border: 1px solid $primary_color;
+
+            &:hover {
+                border-color: $hover_background_color;
+            }
+            &:focus {
+                border-color: $link_color;
+            }
+        }
+
+        label {
+            position: absolute;
+            @include px_to_em(10, top);
+            @include px_to_em(12, left);
+            @include px_to_em(0 8, padding);
+            color: $secondary_text_color;
+            transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+            background-color: $hover_text_color;
+        }
+
+        input:focus ~ label,
+        input:not(:placeholder-shown) input:not(:focus) ~ label {
+            @include px_to_em(-10, top);
+            @include px_to_em(12, left);
+            @include em_font(12);
+            color: $primary_text_color;
+        }
+        
+    }
+ }

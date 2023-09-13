@@ -22,6 +22,16 @@
     max-height: 100%;
     min-height: 100%;
 }
+/**
+ * Mixin SCSS for Full Width
+ *
+ * @param {none}.
+ */
+@mixin full_width() {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+}
 
 /**
  * Mixin SCSS for Filling an Element with Absolute Position
@@ -48,6 +58,50 @@
  @mixin margin_and_padding_none() {
     margin: 0;
     padding: 0;
+}
+
+/**
+ * Mixin SCSS to Convert Pixels to Rems
+ *
+ * @param {int} $px - The value in pixels to convert.
+ * @param {int} $base - The base font size (optional, defaults to 16).
+ */
+ @mixin px_to_rem($px, $property, $base: 16) {
+    $rem_value: $px / $base;
+    #{$property}: #{$rem_value}rem;
+}
+
+/**
+ * Mixin SCSS to Convert Pixels to Ems
+ *
+ * @param {int} $px - The value in pixels to convert.
+ * @param {int} $base - The base font size (optional, defaults to 16).
+ */
+ @mixin px_to_em($px, $property, $base: 16) {
+    $rem_value: $px / $base;
+    #{$property}: #{$rem_value}em;
+}
+
+/**
+ * Mixin SCSS to Convert Pixels to Rems
+ *
+ * @param {int} $px - The value in pixels to convert.
+ * @param {int} $base - The base font size (optional, defaults to 16).
+ */
+ @mixin rem_height($px, $base: 16) {
+    $rem_value: $px / $base;
+    height: #{$rem_value}rem;
+}
+
+/**
+ * Mixin SCSS to Convert Pixels to Ems
+ *
+ * @param {int} $px - The value in pixels to convert.
+ * @param {int} $base - The base font size (optional, defaults to 16).
+ */
+ @mixin em_border_radius($px, $base: 16) {
+    $rem_value: $px / $base;
+    border-radius: #{$rem_value}em;
 }
 
 /**
