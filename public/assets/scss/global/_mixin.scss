@@ -1,0 +1,182 @@
+/**
+ * Mixin SCSS
+ *
+ * @file scss/global/mixins.scss
+ * @author Tafhimul Kabir <tafhimulkabir@protonmail.com>
+ *
+ * This file contains SCSS mixins for styling elements.
+ *
+ * --------------------------------------------------------------
+ */
+
+/**
+ * Mixin SCSS for Full Width and Height
+ *
+ * @param {none}.
+ */
+@mixin full_heigh_width() {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    min-height: 100%;
+}
+
+/**
+ * Mixin SCSS for Filling an Element with Absolute Position
+ *
+ * @param {string} $position - The position value (default is 'absolute').
+ */
+ @mixin fill_with_position($position: absolute) {
+    position: $position;
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    height: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/**
+ * Mixin SCSS for Margin and Padding
+ *
+ * @param {int} $value - The margin and padding value.
+ */
+ @mixin margin_and_padding_none() {
+    margin: 0;
+    padding: 0;
+}
+
+/**
+ * Mixin SCSS for Background Color with Opacity
+ *
+ * @param {string} $color - The background color (e.g., #RRGGBB).
+ * @param {int} $opacity - The opacity value (e.g., 0.5 for 50% opacity).
+ */
+ @mixin bg_color($color, $opacity: 1) {
+    background-color: rgba($color, $opacity);
+}
+
+/**
+ * Mixin SCSS for Box Shadow with Opacity
+ *
+ * @param {int} $offset_x - The horizontal shadow offset (e.g., '2px').
+ * @param {int} $offset_y - The vertical shadow offset (e.g., '2px').
+ * @param {int} $blur_radius - The blur radius (e.g., '4px').
+ * @param {int} $spread_radius - The spread radius (e.g., '0').
+ * @param {string} $color - The shadow color (e.g., #RRGGBB).
+ * @param {int} $opacity - The shadow opacity (e.g, 0.5 for 50% opacity).
+ */
+ @mixin box_shadow($offset_x, $offset_y, $blur_radius, $spread_radius, $color, $opacity) {
+    box-shadow: $offset_x $offset_y $blur_radius $spread_radius rgba($color, $opacity);
+}
+
+/**
+ * Mixin SCSS for Box Shadow with Opacity Inside
+ *
+ * @param {int} $offset_x - The horizontal shadow offset (e.g., '2px').
+ * @param {int} $offset_y - The vertical shadow offset (e.g., '2px').
+ * @param {int} $blur_radius - The blur radius (e.g., '4px').
+ * @param {int} $spread_radius - The spread radius (e.g., '0').
+ * @param {string} $color - The shadow color (e.g., #RRGGBB).
+ * @param {int} $opacity - The shadow opacity (e.g, 0.5 for 50% opacity).
+ */
+ @mixin box_shadow_inset($offset_x, $offset_y, $blur_radius, $spread_radius, $color, $opacity) {
+    box-shadow: inset $offset_x $offset_y $blur_radius $spread_radius rgba($color, $opacity);
+}
+
+/**
+ * Mixin SCSS to Convert Pixels to Rems
+ *
+ * @param {int} $px - The value in pixels to convert.
+ * @param {int} $base - The base font size (optional, defaults to 16).
+ */
+ @mixin rem_font($px, $base: 16) {
+    $rem_value: $px / $base;
+    font-size: #{$rem_value}rem;
+}
+
+/**
+ * Mixin SCSS to Convert Values to Ems
+ *
+ * @param {int} $value - The numeric value to convert.
+ * @param {int} $base - The base font size (optional, defaults to 16).
+ */
+ @mixin em_font($px, $base: 16) {
+    $em_value: $px / $base;
+    font-size: #{$em_value}em;
+}
+
+/**
+ * Mixin SCSS to Convert Pixels to Rems for Margin
+ *
+ * @param {int|list} $values - The margin values in pixels. Can be a single value or a list.
+ * @param {int} $base - The base font size (optional, defaults to 16).
+ */
+ @mixin rem_margin($values, $base: 16) {
+    $rem_values: if(type-of($values) == list, $values, ($values $values $values $values));
+    $rem_top: nth($rem_values, 1) / $base;
+    $rem_right: nth($rem_values, 2) / $base;
+    $rem_bottom: nth($rem_values, 3) / $base;
+    $rem_left: nth($rem_values, 4) / $base;
+    margin: #{$rem_top}rem #{$rem_right}rem #{$rem_bottom}rem #{$rem_left}rem;
+}
+
+/**
+ * Mixin SCSS to Convert Pixels to Ems for Margin
+ *
+ * @param {int|list} $values - The margin values in pixels. Can be a single value or a list.
+ * @param {int} $base - The base font size (optional, defaults to 16).
+ */
+@mixin em_margin($values, $base: 16) {
+    $em_values: if(type-of($values) == list, $values, ($values $values $values $values));
+    $em_top: nth($em_values, 1) / $base;
+    $em_right: nth($em_values, 2) / $base;
+    $em_bottom: nth($em_values, 3) / $base;
+    $em_left: nth($em_values, 4) / $base;
+    margin: #{$em_top}em #{$em_right}em #{$em_bottom}em #{$em_left}em;
+}
+
+/**
+ * Mixin SCSS to Convert Pixels to Rems for Padding
+ *
+ * @param {int|list} $values - The padding values in pixels. Can be a single value or a list.
+ * @param {int} $base - The base font size (optional, defaults to 16).
+ */
+@mixin rem_padding($values, $base: 16) {
+    $rem_values: if(type-of($values) == list, $values, ($values $values $values $values));
+    $rem_top: nth($rem_values, 1) / $base;
+    $rem_right: nth($rem_values, 2) / $base;
+    $rem_bottom: nth($rem_values, 3) / $base;
+    $rem_left: nth($rem_values, 4) / $base;
+    padding: #{$rem_top}rem #{$rem_right}rem #{$rem_bottom}rem #{$rem_left}rem;
+}
+
+/**
+ * Mixin SCSS to Convert Pixels to Ems for Padding
+ *
+ * @param {int|list} $values - The padding values in pixels. Can be a single value or a list.
+ * @param {int} $base - The base font size (optional, defaults to 16).
+ */
+@mixin em_padding($values, $base: 16) {
+    $em_values: if(type-of($values) == list, $values, ($values $values $values $values));
+    $em_top: nth($em_values, 1) / $base;
+    $em_right: nth($em_values, 2) / $base;
+    $em_bottom: nth($em_values, 3) / $base;
+    $em_left: nth($em_values, 4) / $base;
+    padding: #{$em_top}em #{$em_right}em #{$em_bottom}em #{$em_left}em;
+}
+
+
+
+
+
+
+
+// DropDown
+// Slide Left
+// Slide Right
+// Modal

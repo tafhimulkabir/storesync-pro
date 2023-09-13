@@ -1,0 +1,202 @@
+/**
+ * Typography SCSS
+ *
+ * @file scss/global/typography.scss
+ * @author Tafhimul Kabir <tafhimulkabir@protonmail.com>
+ *
+ * This file defines default typography styles using SCSS.
+ *
+ * --------------------------------------------------------------
+ */
+
+// Set up default font settings.
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: $base_font_family;
+    font-weight: $font_weight_light;
+    line-height: $line_height;
+    font-size: $base_font_size;
+    color: $primary_text_color;
+}
+
+// Set us default style for outline.
+*:focus {
+    outline-style: solid;
+    outline-width: 0.5px;
+    outline-color: $primary_color;
+    transition: all 1s ease-in;
+}
+
+// Set us default style for selection.
+*::selection {
+    color: $hover_text_color;
+    background-color: $primary_color;
+}
+
+// Set up default style for heading.
+h1, h2, h3, h4, h5, h6 {
+    font-weight: $font_weight_bold;
+    color: $primary_text_color;
+}
+
+h1 {
+    @include rem_font(36);
+    @include em_margin(0 0 10 0);
+    line-height: 1.6;
+}
+h2 {
+    @include rem_font(30);
+    @include em_margin(0 0 8 0);
+    line-height: 1.6;
+}
+h3 {
+    @include rem_font(26);
+    @include em_margin(0 0 8 0);
+    line-height: 1.6;
+}
+h4 {
+    @include rem_font(22);
+    @include em_margin(0 0 8 0);
+    line-height: 1.6;
+}
+h5 {
+    @include rem_font(20);
+    @include em_margin(0 0 6 0);
+    line-height: 1.6;
+}
+h6 {
+    @include rem_font(18);
+    @include em_margin(0 0 6 0);
+    line-height: 1.6;
+}
+h1 img, h2 img, h3 img,
+h4 img, h5 img, h6 img {
+    @include margin_and_padding_none();
+    display: inline-block;
+}
+
+// Set us default style for text elements.
+p {
+    @include em_margin(0 0 20 0);
+}
+p img {
+    display: inline-block;
+    @include margin_and_padding_none();
+}
+p img.app__left {
+   float: left;
+   @include em_margin(20 20 20 0);
+}
+p img.app__right {
+    float: right;
+    @include em_margin(20 0 20 20);
+}
+blockquote {
+    @include em_margin(20);
+    font-style: italic;
+    color: $secondary_text_color;
+}
+strong, b, dfn {
+    font-weight: $font_weight_regular;
+}
+em, i, dfn {
+    font-style: italic;
+}
+sub, sup {
+    list-style: 0;
+}
+abbr, acronym {
+    border-bottom: 1px dotted $secondary_text_color;
+}
+address {
+    @include em_margin(0 0 20 0);
+    font-style: italic;
+}
+del {
+    color: $primary_text_color;
+}
+pre {
+    @include em_margin(20 0 20 0);
+    white-space: pre;
+}
+// pre, code, tt {
+//     @include rem_font(16);
+//     font-family: 'andale mono', 'lucida console', monospace;
+//     line-height: 1.5;
+// }
+
+// Set up default style for link.
+a, a:hover, a:active,
+a:focus, a:visited {
+    display: inline-block;
+}
+// a {
+
+// }
+// a:hover {
+
+// }
+// a:active {
+
+// }
+// a:focus {
+
+// }
+// a:visited {
+
+// }
+
+// Set up style for list.
+li ul, li, ol {
+    @include em_margin(0 20 0 20);
+}
+ul, li {
+    @include em_margin(0 20 20 20)
+}
+ul {
+    list-style-type: disc;
+}
+ol {
+    list-style: decimal;
+}
+dl {
+    @include em_margin(0 0 20 0);
+}
+dl dt {
+    font-weight: $font_weight_bold;
+}
+dd {
+    @include em_margin(0 0 0 20);
+}
+
+// Set us style for table.
+table {
+    @include em_margin(0 0 20 0);
+    width: 100%;
+}
+th {
+    font-weight: $font_weight_bold;
+}
+thead th {
+    border-bottom: 1px dashed $secondary_text_color;
+}
+th, td, caption {
+    @include em_padding(4 10 4 5);
+}
+// tr td {
+    
+// }
+tfoot {
+    font-style: italic;
+}
+
+// Set us some common classes.
+.app__small {
+    @include em_font(12);
+}
+.app__large {
+    @include em_font(18);
+}
+.app_hide {
+    display: none;
+}

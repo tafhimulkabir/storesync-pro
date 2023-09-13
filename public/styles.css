@@ -5,7 +5,7 @@
   font-weight: 400;
 
   color: #0f0f0f;
-  background-color: #f6f6f6;
+  background-color: #f6f6f6d8;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -107,3 +107,160 @@ button {
     background-color: #0f0f0f69;
   }
 }
+
+
+
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header#app__main__titlebar {
+    display: flex;
+    border-bottom: 1px solid #87878717;
+}
+
+
+.app__titlebar__logo__wrapper {
+    padding: 8px 5px 8px 15px;
+    font-size: 9px;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+.app__titlebar__drag {
+    flex: 1;
+}
+.app__titlebar__button__wrapper {
+    display: flex;
+    justify-content: end;
+}
+
+button.app__titlebar__button {
+    border-radius: 0;
+    box-shadow: none;
+    background: no-repeat;
+}
+button.app__titlebar__button:hover {
+    border: none;
+}
+svg {
+    height: 15px;
+    width: 15px;
+}
+.app__titlebar__button:hover svg rect {
+    fill: #f00;
+}
+
+
+
+
+@font-face {
+    font-family: 'icomoon';
+    src:  url('assets/icon/icomoon.eot?oe1lql');
+    src:  url('assets/icon/icomoon.eot?oe1lql#iefix') format('embedded-opentype'),
+      url('assets/icon/icomoon.ttf?oe1lql') format('truetype'),
+      url('assets/icon/icomoon.woff?oe1lql') format('woff'),
+      url('assets/icon/icomoon.svg?oe1lql#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-cart:before {
+    content: "\e900";
+  }
+  .icon-chatbox-ellipses:before {
+    content: "\e903";
+  }
+  .icon-eye-sharp:before {
+    content: "\e902";
+  }
+  .icon-home:before {
+    content: "\e905";
+  }
+  .icon-pencil-sharp:before {
+    content: "\e906";
+  }
+  .icon-person:before {
+    content: "\e907";
+  }
+  .icon-person-add:before {
+    content: "\e908";
+  }
+  .icon-reader:before {
+    content: "\e90b";
+  }
+  .icon-settings-sharp:before {
+    content: "\e90f";
+  }
+  .icon-trash-sharp:before {
+    content: "\e90d";
+  }
+  .icon-eye:before {
+    content: "\e90e";
+  }
+  .icon-shopping-bag:before {
+    content: "\e912";
+  }
+  .icon-library_books:before {
+    content: "\e913";
+  }
+  .icon-dashboard:before {
+    content: "\e914";
+  }
+  .icon-minimize:before {
+    content: "\e909";
+  }
+  .icon-person_add_alt_1:before {
+    content: "\e915";
+  }
+  .icon-clear:before {
+    content: "\e90a";
+  }
+  .icon-dashboard1:before {
+    content: "\e917";
+  }
+  .icon-shopping_bag1:before {
+    content: "\e918";
+  }
+  .icon-maximize:before {
+    content: "\e90c";
+  }
+  .icon-shopping-bag2:before {
+    content: "\e91b";
+  }
+  .icon-user:before {
+    content: "\e91c";
+  }
+  .icon-book2:before {
+    content: "\e91d";
+  }
+  .icon-pencil1:before {
+    content: "\e911";
+  }
+  .icon-notebook:before {
+    content: "\e929";
+  }
+  .icon-book:before {
+    content: "\e923";
+  }
+  

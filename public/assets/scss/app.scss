@@ -1,0 +1,22 @@
+/**
+ * App SCSS
+ *
+ * @file scss/app.scss
+ * @output public/assets/css/app.css
+ * @author Tafhimul Kabir <tafhimulkabir@protonmail.com>
+ *
+ * This file includes all the common partials, processes them, and
+ * outputs the compiled CSS to the 'app.css' file in 'public/assets/css'.
+ *
+ * --------------------------------------------------------------
+ */
+
+// Set character encoding to UTF-8.
+@charset "UTF-8";
+
+// Import all the common partials.
+@import
+    'global/mixin',
+    'global/variable',
+    'global/reset',
+    'global/typography';
